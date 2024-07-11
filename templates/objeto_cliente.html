@@ -1,0 +1,13 @@
+<tr class="cliente-{{cliente.id}}">
+  <th scope="row">{{ cliente.id }}</th>
+  <td>{{ cliente.nome }}</td>
+  <td>{{ cliente.email }}</td>
+  <td>
+    <button class="btn btn-primary" c-get="{{ url_for('cliente.form_atualizar_cliente', cliente_id=cliente.id) }}" c-target="#editar-usuario">
+      Editar
+    </button>
+    <button c-delete="{{ url_for('cliente.deletar_cliente', cliente_id=cliente.id) }}" class="btn btn-danger" c-remove-closest="tr">
+      Deletar
+    </button>
+  </td>
+</tr>
